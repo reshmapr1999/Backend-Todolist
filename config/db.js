@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
+require('dotenv').config(); // Load environment variables from .env file
+
 
 //connect to DB
-mongoose.connect('mongodb://localhost/todoapp');
+const dbUrl = `mongodb+srv://${process.env.DB_USERNAME}:${encodeURIComponent(process.env.DB_PASSWORD)}@todolist.5ncng.mongodb.net/?retryWrites=true&w=majority&appName=ToDoList`;
+mongoose.connect(dbUrl);
 
 //acquire the connection
 const db = mongoose.connection;
