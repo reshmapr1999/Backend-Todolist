@@ -1,0 +1,35 @@
+/* Custom CSS */
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Align text and image vertically */
+    justify-content: center; /* Center horizontally */
+    width: 100%; /* Ensure full width */
+    font-size: 24px; /* Change font size */
+    font-family: 'Arial', sans-serif; /* Change font family */
+    font-weight: bold;
+}
+
+.navbar img {
+    margin-right: 10px; /* Add space between image and text */
+}
+
+.container{
+    font-family: 'Arial', sans-serif; /* Change font family */
+    font-weight: bold;
+    width: 100%;
+    margin: 25px;
+    min-width: 600px; /* Adjust this value based on the layout *//* Ensure the container does not shrink smaller than the form */
+    
+}
+/* Prevent the form from shrinking */
+.task-form-container {
+    min-width: 400px; /* Set minimum width for the form */
+    max-width: 450px; /* Set a max width to keep it compact */
+}
+
+
+
+/* Prevent the entire page from shrinking */
+body {
+    min-width: 600px; /* Ensures body doesn't shrink beyond a set size */
+}

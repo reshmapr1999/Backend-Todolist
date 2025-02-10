@@ -1,0 +1,37 @@
+ <!-- Right: Display Tasks -->
+ <div class="col-lg-8 m-4  ">
+    <ul class="list-group">
+        <% tasks.forEach(task => { %>
+            <li class="list-group-item">
+                <div class="row w-100  d-flex align-items-center justify-content-center pt-2 ">
+                    <!-- Task Title -->
+                    <div class="col-lg-3 fw-bold text-break ps-4">
+                        <%= task.title %>
+                    </div>
+
+                    <!-- Category -->
+                    <div class="col-lg-3 text-primary">
+                        <%= task.category %>
+                    </div>
+
+                    <!-- Due Date -->
+                    <div class="col-lg-3 text-muted">
+                        <%= task.dueDate ? task.dueDate.toDateString() : 'No Due Date' %>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="col-lg-3 d-flex justify-content-end align-items-center ">
+                        <a  href="/edit-task/<%= task._id %>"  class="btn btn-warning me-2 btn-sm">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <form action="/delete-task/<%= task._id %>" method="POST" class="d-inline">
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+</div>

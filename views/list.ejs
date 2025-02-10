@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/list.png" />
+        <title>ToDo List App</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="/list.css">
+    </head>
+    <body>
+          <nav class="navbar bg-info-subtle">
+              <div class="container-fluid  d-flex justify-content-center">
+                <a class="navbar-brand" href="/">
+                  <img src="/list.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top">
+                  Todo List 
+                </a>
+              </div>
+          </nav>
+          <div class=" d-flex flex-row">
+            <div class=" d-flex flex-row justify-content-between">
+              <%- include("form.ejs") %>
+              <%- include("display.ejs") %>
+            </div>  
+          </div>  
+
+          <script>
+            function toggleCustomCategory() {
+                var dropdown = document.getElementById("categoryDropdown");
+                var customCategoryDiv = document.getElementById("customCategoryDiv");
+                var customCategoryInput = document.getElementById("customCategory");
+    
+                if (dropdown.value === "Other") {
+                    customCategoryDiv.style.display = "block";
+                    customCategoryInput.setAttribute("required", "true");
+                } else {
+                    customCategoryDiv.style.display = "none";
+                    customCategoryInput.removeAttribute("required");
+                }
+            }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>
